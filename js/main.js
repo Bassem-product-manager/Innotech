@@ -252,6 +252,17 @@ if (window.lucide) {
   window.lucide.createIcons();
 }
 
+const fileInputs = document.querySelectorAll(".file-field input[type='file']");
+
+fileInputs.forEach((input) => {
+  const fileName = input.closest(".file-field")?.querySelector("[data-file-name]");
+  if (!fileName) return;
+
+  input.addEventListener("change", () => {
+    fileName.textContent = input.files?.[0]?.name || fileName.dataset.defaultFileName || "No file selected";
+  });
+});
+
 const trackedActions = document.querySelectorAll("[data-track-event]");
 
 trackedActions.forEach((action) => {

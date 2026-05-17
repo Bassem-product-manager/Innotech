@@ -4169,10 +4169,76 @@ html[dir="ltr"] .lang-options {
   padding: 0 10px;
 }
 
-.file-field input[type="file"] {
-  min-height: 48px;
-  padding: 10px 12px;
+.file-field {
+  position: relative;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.file-upload-control {
+  min-height: 52px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid rgba(67, 136, 228, 0.24);
+  border-radius: 13px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 251, 255, 0.64)),
+    rgba(255, 255, 255, 0.74);
   cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.file-field:focus-within .file-upload-control,
+.file-field:hover .file-upload-control {
+  border-color: rgba(67, 136, 228, 0.54);
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(57, 121, 207, 0.12);
+}
+
+.contact-form .file-upload-button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gradient-primary);
+  box-shadow: 0 10px 22px rgba(67, 136, 228, 0.22);
+}
+
+.contact-form .file-upload-button svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.2;
+}
+
+.contact-form .file-upload-name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ideal-candidate-field textarea {
