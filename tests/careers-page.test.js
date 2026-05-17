@@ -31,8 +31,7 @@ const requiredSnippets = [
   "How many your experience years ?",
   "What are your salary expectations?",
   "please upload your cv",
-  "Interview date",
-  "Interview time",
+  "Interview date and time",
 ];
 
 for (const snippet of requiredSnippets) {
@@ -55,8 +54,7 @@ for (const snippet of [
   "سنوات الخبرة",
   "توقعات الراتب",
   "ارفع السيرة الذاتية",
-  "تاريخ المقابلة",
-  "وقت المقابلة",
+  "تاريخ ووقت المقابلة",
 ]) {
   assert.match(careersArabic, new RegExp(snippet.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
@@ -86,19 +84,21 @@ assert.match(careers, /class="file-input"[^>]+type="file"/);
 assert.match(careers, /class="file-upload-button"/);
 assert.match(careers, /Choose CV File/);
 assert.match(careers, /data-file-name/);
-assert.match(careers, /type="date"[^>]+name="interview_date"/);
-assert.match(careers, /type="time"[^>]+name="interview_time"[^>]+min="13:00"[^>]+max="15:00"/);
+assert.match(careers, /type="datetime-local"[^>]+name="interview_datetime"/);
+assert.doesNotMatch(careers, /name="interview_date"/);
+assert.doesNotMatch(careers, /name="interview_time"/);
 assert.match(careers, /enctype="multipart\/form-data"/);
 assert.match(careers, /<h1>Careers<\/h1>/);
 assert.doesNotMatch(careers, /Complete the application below and upload your CV\. Required fields are marked with an asterisk\./);
 assert.match(careers, /href="careers-ar\.html"[^>]*hreflang="ar"/);
 assert.match(careersArabic, /<html lang="ar" dir="rtl">/);
-assert.match(careersArabic, /<h1>Careers<\/h1>/);
+assert.match(careersArabic, /<h1>المسارات المهنية<\/h1>/);
+assert.doesNotMatch(careersArabic, />Careers</);
 assert.match(careersArabic, /اختر ملف السيرة الذاتية/);
 assert.doesNotMatch(careersArabic, /Complete the application below and upload your CV\. Required fields are marked with an asterisk\./);
 assert.match(careersArabic, /href="careers\.html"[^>]*hreflang="en"/);
 assert.match(home, /href="careers\.html"[^>]*>Careers<\/a>/);
-assert.match(homeArabic, /href="careers-ar\.html"[^>]*>Careers<\/a>/);
+assert.match(homeArabic, /href="careers-ar\.html"[^>]*>المسارات المهنية<\/a>/);
 assert.match(styles, /\.careers-section/);
 assert.match(styles, /\.file-input\s*\{[^}]+opacity:\s*0;/s);
 assert.match(styles, /\.file-upload-button/);
