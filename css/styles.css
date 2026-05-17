@@ -4158,17 +4158,6 @@ html[dir="ltr"] .lang-options {
   font-weight: 600;
 }
 
-.other-nationality {
-  grid-column: span 2;
-}
-
-.other-nationality input[type="text"] {
-  min-width: 120px;
-  min-height: 36px;
-  flex: 1 1 160px;
-  padding: 0 10px;
-}
-
 .file-field {
   position: relative;
 }
@@ -5902,17 +5891,6 @@ html[dir="ltr"] .lang-options {
   .radio-grid,
   .radio-grid.compact {
     grid-template-columns: 1fr;
-  }
-
-  .other-nationality {
-    grid-column: auto;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .other-nationality input[type="text"] {
-    width: 100%;
-    flex-basis: auto;
   }
 
   .whatsapp-float {
