@@ -4044,6 +4044,141 @@ html[dir="ltr"] .lang-options {
   line-height: 1.6;
 }
 
+.careers-section {
+  min-height: calc(100vh - 76px);
+  padding-top: 86px;
+}
+
+.careers-layout {
+  gap: 28px;
+}
+
+.careers-copy h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+.careers-copy p {
+  margin-inline: auto;
+}
+
+.careers-shell {
+  width: min(100%, 1040px);
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+}
+
+.careers-form {
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.careers-form-grid {
+  align-items: start;
+  gap: 18px;
+}
+
+.contact-form b {
+  color: #e44848;
+  font-weight: 700;
+}
+
+.contact-form small {
+  margin-top: -2px;
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.choice-group {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice-group legend {
+  margin: 0 0 2px;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.radio-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 128px));
+}
+
+.contact-form .radio-card {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(103, 167, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-form .radio-card:hover,
+.contact-form .radio-card:focus-within {
+  border-color: rgba(67, 136, 228, 0.48);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.contact-form .radio-card input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  flex: 0 0 auto;
+  padding: 0;
+  accent-color: var(--color-blue);
+}
+
+.contact-form .radio-card span {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.other-nationality {
+  grid-column: span 2;
+}
+
+.other-nationality input[type="text"] {
+  min-width: 120px;
+  min-height: 36px;
+  flex: 1 1 160px;
+  padding: 0 10px;
+}
+
+.file-field input[type="file"] {
+  min-height: 48px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.ideal-candidate-field textarea {
+  min-height: 72px;
+}
+
 .whatsapp-float {
   position: fixed;
   z-index: 30;
@@ -5694,11 +5829,35 @@ html[dir="ltr"] .lang-options {
     gap: 12px;
   }
 
+  .careers-copy h1 {
+    font-size: 34px;
+  }
+
+  .radio-grid,
+  .radio-grid.compact {
+    grid-template-columns: 1fr;
+  }
+
+  .other-nationality {
+    grid-column: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .other-nationality input[type="text"] {
+    width: 100%;
+    flex-basis: auto;
+  }
+
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
     width: 52px;
     height: 52px;
+  }
+
+  .careers-page .whatsapp-float {
+    display: none;
   }
 
   .scroll-top {
